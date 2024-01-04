@@ -16,7 +16,7 @@ import java.util.Objects;
 
 @RestController
 public class AirportController {
-    private AirportService airportService=new AirportService;
+    private AirportService airportService=new AirportService();
     @PostMapping("/add_airport")
     public String addAirport(@RequestBody Airport airport){
 
@@ -92,7 +92,7 @@ public class AirportController {
     public int countOfBookingsDoneByPassengerAllCombined(@PathVariable("passengerId")Integer passengerId){
 
         //Tell the count of flight bookings done by a passenger: This will tell the total count of flight bookings done by a passenger :
-       return airport.countOfBookingsDoneByPassengerAllCombined(passengerId);
+        return airportService.countOfBookingsDoneByPassengerAllCombined(passengerId);
     }
 
     @PostMapping("/add-flight")
